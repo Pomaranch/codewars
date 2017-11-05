@@ -11,14 +11,14 @@ object Solution {
     ) yield (c, o.length)
 
 
-  def replace(word: List[Char], occ: Map[Char, Int]) : List[Char] ={
-    if (word.nonEmpty){
+  def replace(word: List[Char], occ: Map[Char, Int]): List[Char] = {
+    if (word.nonEmpty) {
       val o = occ(word.head)
-      o match{
+      o match {
         case 1 => '(' :: replace(word.tail, occ)
         case _ => ')' :: replace(word.tail, occ)
       }
-    }else Nil
+    } else Nil
   }
 }
 
@@ -26,6 +26,7 @@ class DuplicateEncoder {
 
 
 }
+
 object Main {
   def main(args: Array[String]): Unit = {
     println(Solution.duplicateEncode("DBRKCEd3LpvzxClQiDicz"))
